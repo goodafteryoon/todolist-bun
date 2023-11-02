@@ -1,8 +1,11 @@
-# React + Vite
+# TO DO LIST with React, Vite, Bun
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 구현 기능 목록
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- 전체 아이템들 보여주기
+- 아이템 추가
+- 아이템 삭제
+- 아이템 체크박스
+- 아이템 필터링
+- 다크모드 지원
+- 로컬 스토리지 저장
