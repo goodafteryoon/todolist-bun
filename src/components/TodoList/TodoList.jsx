@@ -4,10 +4,9 @@ import Todo from '../Todo/Todo';
 import styles from './TodoList.module.css';
 
 export default function TodoList({ filter }) {
-  const [todos, setTodos] = useState([
-    { id: '123', text: '장보기', status: 'active' },
-    { id: '124', text: '공부하기', status: 'active' },
-  ]);
+  const [todos, setTodos] = useState(getTodosFromLocaleStorage);
+  // 위와 동일, 위는 함수의 레퍼런스만 전달, 아래는 콜백함수 만든 버전
+  // const [todos, setTodos] = useState(() => getTodosFromLocaleStorage());
 
   const handleAdd = (todo) => {
     setTodos([...todos, todo]);
@@ -35,6 +34,12 @@ export default function TodoList({ filter }) {
       <AddTodo onAdd={handleAdd} />
     </section>
   );
+}
+
+function getTodosFromLocaleStorage() {
+  console.log('get');
+  const todos = localStorage.getItem('todos');
+  return todos ? JSON.parse(todos) : [];
 }
 
 function getFilteredItems(todos, filter) {
